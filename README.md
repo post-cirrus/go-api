@@ -17,5 +17,5 @@ Run the container with this command
 sudo docker run -it --rm -p 8000:8000 --name my-running-app my-golang-app
 ```
 
-The APIs will be accessible via **http://<server-ip>:8000**
+The APIs will be accessible via **http://server-ip:8000**
 For the API calls, chekc the *main.go* file
