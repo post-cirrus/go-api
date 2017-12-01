@@ -1,0 +1,25 @@
+# Copyright 2001-2017 Sourcefire, Inc. All Rights Reserved.
+#
+# This file contains rules that were created by Sourcefire, Inc. and other third parties
+# (the "GPL Rules") that are distributed under the GNU General Public License (GPL),
+# v2. The GPL Rules created by Sourcefire are owned by Sourcefire, Inc., and the GPL
+# Rules not created by Sourcefire are owned by their respective owners. Please see
+# the AUTHORS file included in the community package for a list of third party owners and their
+# respective copyrights.
+#
+# This file does not contain any Sourcefire VRT Certified Rules; the VRT Certified
+# Rules are distributed by Sourcefire separately under the VRT Certified Rules License
+# Agreement (v 2.0)
+#
+# -----------------
+# COMMUNITY RULES
+# -----------------
+
+
+alert tcp $HOME_NET any -> any any (msg:"[SNORT] Facebook detected!";content:"facebook"; nocase; sid:1000004;)
+# alert tcp 10.98.1.1 any -> any any (msg:"[SNORT] Facebook detected!";content:"facebook"; nocase; sid:1000004;)
+# alert tcp 10.98.1.1 any -> any any (msg:"[SNORT] Twitter detected!";content:"twitter"; nocase; sid:1000005;)
+# alert tcp 10.99.1.1 any -> any any (msg:"[SNORT] Facebook detected!";content:"facebook"; nocase; sid:1000004;)
+alert tcp $HOME_NET any -> any any (msg:"[SNORT] Twitter detected!";content:"twitter"; nocase; sid:1000005;)
+# alert tcp $EXTERNAL_NET any -> $HOME_NET any (msg:"[SNORT] SCORE! Get the lotion! [Porn]"; content: "porn"; nocase; sid: 5001008; )
+alert tcp 10.99.1.1 any -> any 53 (msg:"[SNORT] DNS Request";content:"facebook"; nocase; sid:1000009;)

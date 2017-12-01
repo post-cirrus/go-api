@@ -1,0 +1,23 @@
+Chain INPUT (policy ACCEPT)
+num  target     prot opt source               destination
+1    RH-Firewall-1-INPUT  all  --  0.0.0.0/0            0.0.0.0/0
+
+Chain FORWARD (policy ACCEPT)
+num  target     prot opt source               destination
+1    RH-Firewall-1-INPUT  all  --  0.0.0.0/0            0.0.0.0/0
+
+Chain OUTPUT (policy ACCEPT)
+num  target     prot opt source               destination
+
+Chain RH-Firewall-1-INPUT (2 references)
+num  target     prot opt source               destination
+1    ACCEPT     all  --  0.0.0.0/0            0.0.0.0/0
+2    ACCEPT     icmp --  0.0.0.0/0            0.0.0.0/0           
+3    ACCEPT     esp  --  0.0.0.0/0            0.0.0.0/0
+4    ACCEPT     ah   --  0.0.0.0/0            0.0.0.0/0
+5    ACCEPT     udp  --  0.0.0.0/0            224.0.0.251         
+6    ACCEPT     udp  --  0.0.0.0/0            0.0.0.0/0           
+7    ACCEPT     tcp  --  0.0.0.0/0            0.0.0.0/0           
+8    ACCEPT     all  --  0.0.0.0/0            0.0.0.0/0           
+9    ACCEPT     tcp  --  0.0.0.0/0            0.0.0.0/0           
+10   REJECT     all  --  0.0.0.0/0            0.0.0.0/0           
